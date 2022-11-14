@@ -47,16 +47,18 @@ function verificarCI (dni){
         //Codigo de provincia
         //Validamos si la cedula pertenece a alguna provincia
         const provinceCode = parseInt(dni[0] + dni[1])
-        if (parseInt(provinceCode) > 24){
+
+        //Valida cédulas locales y de Ecuatorianos en el exterior
+        if (provinceCode > 24 && provinceCode != 30){
             return `La cédula es incorrecta no pertenece a ninguna provincia`
         }
         console.log('Codigo de Provincia: ' + provinceCode);
 
         if(validatorDigit == lastDigit){
-            return `Esta cedula es correcta: ${dni}`
+            return `Esta cédula es correcta: ${dni}`
         }
         else {
-            return `Esta cedula es incorrecta : ${dni}`
+            return `Esta cédula es incorrecta : ${dni}`
         }
     }
     else {
@@ -64,4 +66,4 @@ function verificarCI (dni){
     }
 }
 
-console.log(verificarCI('1313127845'));
+console.log(verificarCI('0910985993'));
