@@ -37,7 +37,12 @@ function verificarCI (dni){
         const decena = (firstDigit + 1) * 10
 
         //Obtenemos el digito validador
-        const validatorDigit = decena - suma
+        let validatorDigit = decena - suma
+        
+        //Si el dígito verificador es mayor a 10 lo igualamos a 0
+        if (validatorDigit >= 10){
+            validatorDigit = 0
+        }
 
         //Codigo de provincia
         //Validamos si la cedula pertenece a alguna provincia
